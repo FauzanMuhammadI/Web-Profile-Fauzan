@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fauzan Muhammad Iftitah — Game Developer, UI/UX Designer & Informatics Engineer</title>
+  <meta name="description"
+    content="Portfolio of Fauzan Muhammad Iftitah — Informatics Student at ITENAS specializing in Game Programming, Game Design, UI/UX Design, and Quality Assurance.">
+  <meta name="keywords"
+    content="Fauzan Muhammad Iftitah, Game Developer, Game Designer, UI/UX Designer, Unity, Informatics, ITENAS, Bandung, Portfolio">
+  <meta name="author" content="Fauzan Muhammad Iftitah">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fauzan Muhammad Iftitah — Game Developer & UI/UX Designer">
+  <meta property="og:description"
+    content="Explore interactive games, desktop applications, UI/UX designs, and software engineering projects.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Interactive Canvas Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Ambient Glow Blobs -->
+  <div class="ambient-glow top-left"></div>
+  <div class="ambient-glow bottom-right"></div>
+  <div class="ambient-glow middle-center"></div>
+
+  <!-- Confetti Canvas for Celebrations -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="container nav-container">
+        <!-- Logo / Brand -->
+        <a href="#home" class="nav-brand">
+          <img src="image/Logo FMI.jpg" alt="FMI Logo" class="nav-logo-icon nav-logo-img">
+          <span>Fauzan<span class="gradient-text">.M.I</span></span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Right Side Nav Actions -->
+        <div class="nav-actions">
+          <!-- Theme Picker Toggle -->
+          <div style="position: relative;">
+            <button class="theme-picker-btn" id="theme-picker-btn" title="Choose Accent Theme">
+              <i class="ph-bold ph-palette"></i>
+            </button>
+            <div class="theme-dropdown" id="theme-dropdown">
+              <span class="theme-color-dot theme-dot-indigo active" data-theme="indigo" title="Neon Indigo"></span>
+              <span class="theme-color-dot theme-dot-cyan" data-theme="cyan" title="Cyber Cyan"></span>
+              <span class="theme-color-dot theme-dot-emerald" data-theme="emerald" title="Matrix Emerald"></span>
+              <span class="theme-color-dot theme-dot-purple" data-theme="purple" title="Electric Purple"></span>
+              <span class="theme-color-dot theme-dot-rose" data-theme="rose" title="Sunset Rose"></span>
+            </div>
+          </div>
+
+          <!-- Status Indicator -->
+          <div class="status-badge" style="display: none;">
+            <span class="status-dot"></span>
+            <span>Open for Opportunities</span>
+          </div>
+
+          <!-- CTA Button -->
+          <a href="#contact" class="btn btn-primary btn-sm">
+            <span>Let's Connect</span>
+            <i class="ph-bold ph-paper-plane-tilt btn-icon"></i>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <div class="mobile-drawer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div style="padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+        <div class="status-badge" style="margin-bottom: 20px; display: inline-flex;">
+          <span class="status-dot"></span>
+          <span>Open for Opportunities</span>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="width: 100%;">
+          <span>Get in Touch</span>
+          <i class="ph-bold ph-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         HERO SECTION
+         ========================================================================= -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Hero Left Details -->
+          <div class="hero-content">
+            <div class="hero-badge-wrap reveal-down delay-1">
+              <span class="hero-badge-spark">✦</span>
+              <span class="hero-badge-text">Informatics Student & Game Developer</span>
+            </div>
+
+            <h1 class="hero-title reveal-up delay-2">
+              Hi, I'm <br>
+              <span class="gradient-text">Fauzan Muhammad Iftitah</span><br>
+              <span class="hero-typewriter-wrap">
+                <span class="hero-typewriter" id="hero-typewriter">Game Programmer</span>
+              </span>
+            </h1>
+
+            <p class="hero-description reveal-up delay-3">
+              Passionate Informatics student with expertise in game programming, game design, UI/UX design, and quality
+              assurance. Experienced in building engaging gameplay mechanics, interactive multimedia, and scalable
+              software solutions.
+            </p>
+
+            <div class="hero-actions reveal-up delay-4">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Projects</span>
+                <i class="ph-bold ph-game-controller btn-icon"></i>
+              </a>
+
+              <a href="#contact" class="btn btn-outline">
+                <i class="ph-bold ph-chat-circle-dots"></i>
+                <span>Get In Touch</span>
+              </a>
+
+              <a href="javascript:void(0)" class="btn btn-outline" data-copy="fauzanmiftitah@gmail.com"
+                title="Click to copy email">
+                <i class="ph-bold ph-copy"></i>
+                <span>Copy Email</span>
+              </a>
+            </div>
+
+
+          </div>
+
+          <!-- Hero Right Visual Card with 3D Tilt -->
+          <div class="hero-visual reveal-scale delay-3">
+            <div class="hero-card-tilt glow-card" data-tilt data-tilt-max="12">
+
+
+              <!-- Profile Visual Showcase -->
+              <div class="hero-card-img-wrap">
+                <img src="image/Pas_foto.png" alt="Fauzan Muhammad Iftitah" class="hero-card-img">
+                <div class="hero-card-overlay">
+                  <div class="hero-card-identity">
+                    <h3>Fauzan M. Iftitah</h3>
+                  </div>
+                  <div class="hero-card-socials">
+                    <a href="https://rb.gy/6n99h8" target="_blank" rel="noreferrer" title="LinkedIn"><i
+                        class="ph-bold ph-linkedin-logo"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noreferrer" title="GitHub"><i
+                        class="ph-bold ph-github-logo"></i></a>
+                    <a href="https://rb.gy/lxug22" target="_blank" rel="noreferrer" title="Personal Website"><i
+                        class="ph-bold ph-globe"></i></a>
+                    <a href="mailto:fauzanmiftitah@gmail.com" title="Email Fauzan"><i
+                        class="ph-bold ph-envelope"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Scroll Down Indicator -->
+      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll down to About section">
+        <div class="scroll-indicator-mouse">
+          <span class="scroll-indicator-dot"></span>
+        </div>
+        <span>Scroll to explore</span>
+      </a>
+    </section>
+
+    <!-- =========================================================================
+         ABOUT SECTION
+         ========================================================================= -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag"><i class="ph-bold ph-user"></i> About Me</span>
+          <h2 class="section-title">Crafting Games, UI & <span class="gradient-text">Interactive Experiences</span></h2>
+          <p class="section-subtitle">
+            Detail-oriented Informatics student dedicated to building captivating games, seamless user interfaces, and
+            robust software architectures.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Story & Highlights -->
+          <div class="about-content reveal-left delay-1">
+            <p class="about-content-text">
+              I recently completed my undergraduate studies in Informatics <strong>Institut Teknologi Nasional (ITENAS)
+                Bandung</strong> with
+              hands-on experience across game programming, game design, graphic design, and UI/UX design through various
+              academic, organizational, and personal projects.
+            </p>
+            <p class="about-content-text">
+              Familiar with the full game development lifecycle—from conceptualizing gameplay mechanics and flow to
+              creating intuitive user interfaces. Detail-oriented with strong analytical capabilities to identify
+              issues, evaluate game functionality, and provide constructive feedback in game testing and quality
+              assurance.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-card reveal-up delay-1">
+                <div class="highlight-icon"><i class="ph-bold ph-game-controller"></i></div>
+                <div class="highlight-info">
+                  <h4>Game Programming</h4>
+                  <p>Unity, C#, 2D/3D physics & AI mechanics.</p>
+                </div>
+              </div>
+
+              <div class="highlight-card reveal-up delay-2">
+                <div class="highlight-icon"><i class="ph-bold ph-paint-brush"></i></div>
+                <div class="highlight-info">
+                  <h4>UI/UX & Graphic Design</h4>
+                  <p>Figma, Adobe Suite, intuitive design systems.</p>
+                </div>
+              </div>
+
+              <div class="highlight-card reveal-up delay-3">
+                <div class="highlight-icon"><i class="ph-bold ph-bug"></i></div>
+                <div class="highlight-info">
+                  <h4>QA & Playtesting</h4>
+                  <p>Systematic bug hunting, balance & gameplay testing.</p>
+                </div>
+              </div>
+
+              <div class="highlight-card reveal-up delay-4">
+                <div class="highlight-icon"><i class="ph-bold ph-shield-check"></i></div>
+                <div class="highlight-info">
+                  <h4>System & Security</h4>
+                  <p>Python, Java POS, pfSense & Suricata IDS/IPS.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Developer Terminal -->
+          <div class="about-terminal reveal-right delay-2">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <div class="terminal-title">fauzan@itenas-dev: ~/profile (zsh)</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);"><i class="ph-bold ph-terminal-window"></i>
+                </div>
+              </div>
+
+              <div class="terminal-body">
+                <div class="code-line">
+                  <span class="code-num">01</span>
+                  <span><span class="code-key">const</span> <span class="code-var">developer</span> = {</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">02</span>
+                  <span style="padding-left: 16px;"><span class="code-prop">name</span>: <span class="code-str">'Fauzan
+                      Muhammad Iftitah'</span>,</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">03</span>
+                  <span style="padding-left: 16px;"><span class="code-prop">education</span>: <span
+                      class="code-str">'ITENAS Bandung — S1 Informatics'</span>,</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">04</span>
+                  <span style="padding-left: 16px;"><span class="code-prop">gpa_ipk</span>: <span class="code-str">'3.64
+                      / 4.00'</span>,</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">05</span>
+                  <span style="padding-left: 16px;"><span class="code-prop">location</span>: <span
+                      class="code-str">'Bandung, Indonesia'</span>,</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">06</span>
+                  <span style="padding-left: 16px;"><span class="code-prop">focus</span>: [<span class="code-str">'Game
+                      Programming'</span>, <span class="code-str">'Game Design'</span>, <span
+                      class="code-str">'UI/UX'</span>, <span class="code-str">'QA Testing'</span>],</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">07</span>
+                  <span style="padding-left: 16px;"><span class="code-prop">status</span>: <span
+                      class="code-str">'Available for Game Dev & QA Roles'</span></span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">08</span>
+                  <span>};</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">09</span>
+                  <span class="code-comment">// Ready to collaborate and solve complex problems</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-num">10</span>
+                  <span><span class="code-var">developer</span>.<span
+                      class="code-prop">buildNextAwesomeProject</span>();</span>
+                </div>
+
+                <!-- Live Timezone Box -->
+                <div class="timezone-box">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <i class="ph-bold ph-clock" style="color: var(--theme-secondary);"></i>
+                    <span>Bandung Local Time:</span>
+                  </div>
+                  <div class="timezone-time" id="live-clock">--:--:-- -- (GMT+7)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SKILLS & TECH STACK SECTION (NO PERCENTAGE BARS)
+         ========================================================================= -->
+    <section id="skills" style="background: rgba(14, 18, 30, 0.4);">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag"><i class="ph-bold ph-stack"></i> Skills & Expertise</span>
+          <h2 class="section-title">Core Competencies & <span class="gradient-text">Technologies</span></h2>
+          <p class="section-subtitle">
+            A versatile skillset spanning interactive game development, visual design, quality assurance, and software
+            engineering.
+          </p>
+        </div>
+
+        <div class="skills-grid skills-grid-modern">
+          <!-- Card 1: Game Dev & Hard Skills -->
+          <div class="skill-category-card glow-card reveal-up delay-1">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="ph-bold ph-game-controller"></i></div>
+              <div>
+                <h3>Game Development</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Programming, Mechanics & QA</p>
+              </div>
+            </div>
+
+            <div class="skill-tags-cloud">
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Unity 3D & 2D</span>
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Game Programming</span>
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Game Design</span>
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Quality Assurance</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> 2D / 3D Mechanics</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Enemy AI & Pathfinding</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Playtesting & Debugging</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Construct 2</span>
+            </div>
+          </div>
+
+          <!-- Card 2: UI/UX & Graphic Design -->
+          <div class="skill-category-card glow-card reveal-up delay-2">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="ph-bold ph-paint-brush"></i></div>
+              <div>
+                <h3>UI/UX & Multimedia</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Visual Design & Creative Tools</p>
+              </div>
+            </div>
+
+            <div class="skill-tags-cloud">
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> UI/UX Design</span>
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Graphic Design</span>
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Figma</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Adobe Photoshop</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Adobe Premiere Pro</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Adobe Animate</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Blender 3D</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Interactive Media</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Software & Systems Engineering -->
+          <div class="skill-category-card glow-card reveal-up delay-3">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="ph-bold ph-code"></i></div>
+              <div>
+                <h3>Software & Systems</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Programming, AI & Networking</p>
+              </div>
+            </div>
+
+            <div class="skill-tags-cloud">
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Python & OpenCV</span>
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Java Desktop (POS)</span>
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> Git & GitHub</span>
+              <span class="skill-badge primary"><i class="ph-bold ph-check"></i> CSS & JavaScript</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Machine Learning</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> pfSense Firewall</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Security Testing</span>
+              <span class="skill-badge"><i class="ph-bold ph-check"></i> Object-Oriented Dev</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skills Card -->
+        <div class="soft-skills-card glow-card reveal-up delay-2" style="margin-bottom: 40px;">
+          <div class="soft-skills-header">
+            <div class="soft-skills-icon"><i class="ph-bold ph-users-three"></i></div>
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 4px;">Professional Soft Skills</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Core interpersonal qualities demonstrated across
+                team projects & academic environments</p>
+            </div>
+          </div>
+          <div class="soft-skills-grid">
+            <div class="soft-skill-pill"><i class="ph-bold ph-handshake"></i> <span>Teamwork & Collaboration</span>
+            </div>
+            <div class="soft-skill-pill"><i class="ph-bold ph-gauge"></i> <span>Ability to Work Under Pressure</span>
+            </div>
+            <div class="soft-skill-pill"><i class="ph-bold ph-hourglass"></i> <span>Time Management</span></div>
+            <div class="soft-skill-pill"><i class="ph-bold ph-lightbulb"></i> <span>Creativity & Problem Solving</span>
+            </div>
+            <div class="soft-skill-pill"><i class="ph-bold ph-arrows-clockwise"></i> <span>Adaptability to New
+                Challenges</span></div>
+          </div>
+        </div>
+
+        <!-- Daily Tools Chips -->
+        <div class="tools-showcase reveal-up delay-3">
+          <div class="tools-title">Tools & Ecosystem I Use</div>
+          <div class="tools-chips-wrap">
+            <span class="tool-chip"><i class="ph-bold ph-game-controller"></i> Unity Engine</span>
+            <span class="tool-chip"><i class="ph-bold ph-figma-logo"></i> Figma</span>
+            <span class="tool-chip"><i class="ph-bold ph-git-branch"></i> Git & GitHub</span>
+            <span class="tool-chip"><i class="ph-bold ph-cube"></i> Blender 3D</span>
+            <span class="tool-chip"><i class="ph-bold ph-image"></i> Adobe Photoshop</span>
+            <span class="tool-chip"><i class="ph-bold ph-video-camera"></i> Adobe Premiere Pro</span>
+            <span class="tool-chip"><i class="ph-bold ph-play-circle"></i> Adobe Animate</span>
+            <span class="tool-chip"><i class="ph-bold ph-code-simple"></i> Visual Studio Code</span>
+            <span class="tool-chip"><i class="ph-bold ph-terminal"></i> Python</span>
+            <span class="tool-chip"><i class="ph-bold ph-coffee"></i> Java</span>
+            <span class="tool-chip"><i class="ph-bold ph-browser"></i> Construct 2</span>
+            <span class="tool-chip"><i class="ph-bold ph-shield"></i> pfSense & Suricata</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         PROJECTS SECTION
+         ========================================================================= -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag"><i class="ph-bold ph-folder-open"></i> Portfolio</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects & Works</span></h2>
+          <p class="section-subtitle">
+            A showcase of desktop games, educational browser titles, computer vision applications, and software tools.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="projects-filter-bar reveal-up delay-1">
+          <button class="filter-btn active" data-filter="all">All Projects (7)</button>
+          <button class="filter-btn" data-filter="game">Games & Interactive</button>
+          <button class="filter-btn" data-filter="desktop">Desktop Apps & AI</button>
+          <button class="filter-btn" data-filter="multimedia">Educational & Multimedia</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: Speedious -->
+          <div class="project-card glow-card reveal-scale delay-1" data-category="game" data-tilt data-tilt-max="6">
+            <div class="project-thumbnail-wrap">
+              <span class="project-category-tag">Game Desktop (Unity)</span>
+              <img src="image/Poster SPEEDIOUS.png" alt="Speedious Desktop Racing Game" class="project-thumbnail">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Speedious — 3D Racing Game</h3>
+              <p class="project-desc">
+                A 3D cartoon-style desktop racing game where players select their vehicle, navigate vibrant race tracks,
+                and compete against responsive AI opponents.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Unity</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">3D Physics</span>
+                <span class="tech-tag">AI Waypoint System</span>
+                <span class="tech-tag">UI/UX</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="javascript:void(0)" class="project-link-btn open-case-study" data-project="speedious">
+                  <span>View Details</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Thalos: The Dark Descent -->
+          <div class="project-card glow-card reveal-scale delay-2" data-category="game" data-tilt data-tilt-max="6">
+            <div class="project-thumbnail-wrap">
+              <span class="project-category-tag">Game Desktop (Unity)</span>
+              <span class="project-award-badge">🏆 Best Game &mdash; Infinite Learning MSIB Batch 7</span>
+              <img src="image/Thalos1.png" alt="Thalos The Dark Descent" class="project-thumbnail">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Thalos : The Dark Descent</h3>
+              <p class="project-desc">
+                🏆 Awarded <strong>Best Game</strong> in the Infinite Learning Independent Study (MSIB) program.
+                A 2.5D RPG hack-and-slash inspired by Greek mythology with fluid combat mechanics, enemy AI,
+                inventory/shop economy, and atmospheric exploration.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Unity</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">2.5D Combat</span>
+                <span class="tech-tag">Enemy AI</span>
+                <span class="tech-tag">Inventory System</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="javascript:void(0)" class="project-link-btn open-case-study" data-project="thalos">
+                  <span>View Details</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Coin Rush -->
+          <div class="project-card glow-card reveal-scale delay-1" data-category="game" data-tilt data-tilt-max="6">
+            <div class="project-thumbnail-wrap">
+              <span class="project-category-tag">Game Desktop (Unity)</span>
+              <img src="image/CoinRush1.png" alt="Coin Rush 3D" class="project-thumbnail">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Coin Rush — 3D Third-Person Game</h3>
+              <p class="project-desc">
+                A third-person game where players collect points to increase their score while dodging point-reducing
+                hazard coins. Emphasizes exploration and rapid decision-making.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Unity</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Third-Person Controller</span>
+                <span class="tech-tag">Gameplay Mechanics</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="javascript:void(0)" class="project-link-btn open-case-study" data-project="coin-rush">
+                  <span>View Details</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Mathster -->
+          <div class="project-card glow-card reveal-scale delay-2" data-category="multimedia" data-tilt
+            data-tilt-max="6">
+            <div class="project-thumbnail-wrap">
+              <span class="project-category-tag">Browser Game (Construct 2)</span>
+              <img src="image/Mathster1.png" alt="Mathster Educational Game" class="project-thumbnail">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Mathster — Educational Math Game</h3>
+              <p class="project-desc">
+                Educational game designed for elementary school students to learn and practice mathematics through
+                interactive gameplay and engaging challenge sequences.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Construct 2</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">Gamified Learning</span>
+                <span class="tech-tag">Educational UI</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="javascript:void(0)" class="project-link-btn open-case-study" data-project="mathster">
+                  <span>View Details</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Sign Language Detection -->
+          <div class="project-card glow-card reveal-scale delay-1" data-category="desktop" data-tilt data-tilt-max="6">
+            <div class="project-thumbnail-wrap">
+              <span class="project-category-tag">DesktopApp (Python)</span>
+              <img src="image/Bisindo1.png" alt="Sign Language Detection Application" class="project-thumbnail">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Sign Language Detection Application</h3>
+              <p class="project-desc">
+                A real-time Indonesian Sign Language recognition desktop app using computer vision and machine learning
+                models to detect hand gestures and translate them to words.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">Hand Tracking</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="javascript:void(0)" class="project-link-btn open-case-study" data-project="sign-language">
+                  <span>View Details</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Cafe Makmur Itenas -->
+          <div class="project-card glow-card reveal-scale delay-2" data-category="desktop" data-tilt data-tilt-max="6">
+            <div class="project-thumbnail-wrap">
+              <span class="project-category-tag">DesktopApp (Java)</span>
+              <img src="image/cafe1.png" alt="Cafe Makmur Itenas POS System" class="project-thumbnail">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Cafe Makmur Itenas — POS System</h3>
+              <p class="project-desc">
+                A desktop-based Point-of-Sale application engineered to manage café sales transactions, menu catalogs,
+                bill calculations, and operational reporting.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">OOP</span>
+                <span class="tech-tag">POS Architecture</span>
+                <span class="tech-tag">Desktop GUI</span>
+                <span class="tech-tag">Database</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="javascript:void(0)" class="project-link-btn open-case-study" data-project="cafe-makmur">
+                  <span>View Details</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7: Solar System Learning App -->
+          <div class="project-card glow-card reveal-scale delay-1" data-category="multimedia" data-tilt
+            data-tilt-max="6">
+            <div class="project-thumbnail-wrap">
+              <span class="project-category-tag">DesktopApp (Adobe Animation)</span>
+              <img src="image/Tata1.png" alt="Solar System Learning App" class="project-thumbnail">
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Solar System Learning App</h3>
+              <p class="project-desc">
+                An interactive educational multimedia application explaining celestial structures, orbits, planets, and
+                astronomy elements through rich dynamic animations.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Adobe Animate</span>
+                <span class="tech-tag">Interactive Media</span>
+                <span class="tech-tag">Animation</span>
+                <span class="tech-tag">EdTech</span>
+                <span class="tech-tag">Graphic Design</span>
+              </div>
+
+              <div class="project-footer-links">
+                <a href="javascript:void(0)" class="project-link-btn open-case-study" data-project="solar-system">
+                  <span>View Details</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         EXPERIENCE, ORGANIZATION & EDUCATION SECTION
+         ========================================================================= -->
+    <section id="experience" style="background: rgba(10, 13, 22, 0.5);">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag"><i class="ph-bold ph-briefcase"></i> Career & Milestones</span>
+          <h2 class="section-title">Experience & <span class="gradient-text">Education Journey</span></h2>
+          <p class="section-subtitle">
+            A progressive path across game development, laboratory mentoring, cybersecurity engineering, and leadership.
+          </p>
+        </div>
+
+        <div class="timeline-wrap">
+          <div class="timeline-line">
+            <div class="timeline-line-progress"></div>
+          </div>
+
+          <!-- Timeline 1: Multimedia Lab Assistant -->
+          <div class="timeline-item reveal-left delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glow-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Multimedia Laboratory Assistant</h3>
+                  <div class="timeline-company">ITENAS (Institut Teknologi Nasional Bandung)</div>
+                </div>
+                <span class="timeline-badge-date">Sep 2024 — Jan 2025</span>
+              </div>
+              <p class="timeline-desc">
+                Guided university students in learning and applying core multimedia software including Adobe Animate,
+                Photoshop, Premiere Pro, and Blender.
+              </p>
+              <div class="timeline-achievements">
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Assisted students in
+                  troubleshooting technical issues and improving multimedia projects.</div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Reviewed final projects and
+                  provided constructive feedback to elevate visual quality and UX.</div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Communicated complex technical
+                  concepts clearly to students with diverse experience levels.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline 2: Game Dev Independent Study -->
+          <div class="timeline-item reveal-right delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glow-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Independent Study Game Developer</h3>
+                  <div class="timeline-company">Infinite Learning</div>
+                </div>
+                <span class="timeline-badge-date">Sep 2024 — Dec 2024</span>
+              </div>
+              <p class="timeline-desc">
+                Contributed as a core Game Programmer in a team-based game development pipeline, implementing game
+                mechanics, features, and core engine systems.
+              </p>
+              <div class="timeline-achievements">
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Implemented and tested
+                  gameplay features to ensure high responsiveness and consistency.</div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Collaborated with game
+                  designers and artists to integrate gameplay, 2D/3D visual assets, and UI.</div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Participated actively in
+                  playtesting sessions to identify bugs, gameplay balance, and improvements.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline 3: Cyber Security Intern -->
+          <div class="timeline-item reveal-left delay-3">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glow-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Cyber Security Engineer Intern</h3>
+                  <div class="timeline-company">PT. Dirgantara Indonesia</div>
+                </div>
+                <span class="timeline-badge-date">Jun 2023 — Aug 2023</span>
+              </div>
+              <p class="timeline-desc">
+                Designed and deployed enterprise network security infrastructure utilizing pfSense firewall and Suricata
+                Intrusion Detection & Prevention System (IDS/IPS).
+              </p>
+              <div class="timeline-achievements">
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Conducted comprehensive
+                  vulnerability testing to evaluate firewall and IDS/IPS configurations.</div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Executed systematic
+                  troubleshooting and log analysis to improve system uptime and reliability.</div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Built rigorous testing
+                  workflows that developed strong attention to detail and issue resolution.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline 4: Organization HMIF -->
+          <div class="timeline-item reveal-right delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glow-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Public Relations & Design Staff</h3>
+                  <div class="timeline-company">Himpunan Mahasiswa Informatika Itenas (HMIF)</div>
+                </div>
+                <span class="timeline-badge-date">Jul 2022 — Jul 2023</span>
+              </div>
+              <p class="timeline-desc">
+                Spearheaded visual branding, social media content publication, and event promotion for the university
+                Informatics student association.
+              </p>
+              <div class="timeline-achievements">
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Designed posters and digital
+                  visual content for commemorative days and organizational campaigns.</div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Managed organizational social
+                  media distribution to enhance member engagement.</div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Coordinated with committee
+                  team members to successfully execute major student events.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline 5: Education ITENAS -->
+          <div class="timeline-item reveal-left delay-3">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glow-card" style="border-color: rgba(var(--theme-primary-rgb), 0.3);">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">S1 Informatics Engineering (Bachelor's Degree)</h3>
+                  <div class="timeline-company">Institut Teknologi Nasional (ITENAS) Bandung</div>
+                </div>
+                <span class="timeline-badge-date"
+                  style="background: rgba(16, 185, 129, 0.15); color: var(--theme-emerald); border-color: rgba(16, 185, 129, 0.3);">2021
+                  — Present</span>
+              </div>
+              <p class="timeline-desc">
+                Undergraduate academic study focusing on game development, software architecture, algorithm design,
+                UI/UX systems, and computer vision.
+              </p>
+              <div class="timeline-achievements">
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> <strong>Cumulative GPA / IPK:
+                    3.64 / 4.00</strong></div>
+                <div class="timeline-achievement"><i class="ph-bold ph-check-circle"></i> Coursework: Game Programming,
+                  Computer Graphics, Software Engineering, Object-Oriented Programming, UI/UX Design.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+     CONTACT SECTION
+     ========================================================================= -->
+    <section id="contact" style="background: rgba(14, 18, 30, 0.4);">
+      <div class="container">
+
+        <div class="section-header reveal-up">
+          <span class="section-tag">
+            <i class="ph-bold ph-envelope"></i> Get In Touch
+          </span>
+
+          <h2 class="section-title">
+            Let's Connect & <span class="gradient-text">Collaborate</span>
+          </h2>
+
+          <p class="section-subtitle">
+            Interested in discussing game development, UI/UX design, QA testing, or potential project collaborations?
+            Feel free to reach out!
+          </p>
+        </div>
+
+        <div class="contact-info-cards">
+
+          <!-- Direct Email -->
+          <div class="contact-info-card glow-card reveal-left delay-1">
+            <div class="contact-info-left">
+              <div class="contact-info-icon">
+                <i class="ph-bold ph-envelope-simple"></i>
+              </div>
+
+              <div>
+                <div class="contact-info-label">Direct Email</div>
+                <div class="contact-info-val">fauzanmiftitah@gmail.com</div>
+              </div>
+            </div>
+
+            <button class="copy-btn" data-copy="fauzanmiftitah@gmail.com" title="Copy email address">
+              <i class="ph-bold ph-copy"></i> Copy
+            </button>
+          </div>
+
+
+          <!-- Phone / WhatsApp -->
+          <div class="contact-info-card glow-card reveal-left delay-2">
+            <div class="contact-info-left">
+              <div class="contact-info-icon">
+                <i class="ph-bold ph-phone-call"></i>
+              </div>
+
+              <div>
+                <div class="contact-info-label">Phone / WhatsApp</div>
+                <div class="contact-info-val">081313797923</div>
+              </div>
+            </div>
+
+            <button class="copy-btn" data-copy="081313797923" title="Copy phone number">
+              <i class="ph-bold ph-copy"></i> Copy
+            </button>
+          </div>
+
+
+          <!-- LinkedIn -->
+          <div class="contact-info-card glow-card reveal-left delay-2">
+            <div class="contact-info-left">
+              <div class="contact-info-icon">
+                <i class="ph-bold ph-linkedin-logo"></i>
+              </div>
+
+              <div>
+                <div class="contact-info-label">LinkedIn Profile</div>
+                <div class="contact-info-val">rb.gy/6n99h8</div>
+              </div>
+            </div>
+
+            <a href="https://rb.gy/6n99h8" target="_blank" rel="noreferrer" class="copy-btn"
+              style="text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              <i class="ph-bold ph-arrow-square-out"></i> Visit
+            </a>
+          </div>
+
+
+          <!-- Location -->
+          <div class="contact-info-card glow-card reveal-left delay-3">
+            <div class="contact-info-left">
+              <div class="contact-info-icon">
+                <i class="ph-bold ph-map-pin"></i>
+              </div>
+
+              <div>
+                <div class="contact-info-label">Location</div>
+                <div class="contact-info-val">
+                  Bandung, Indonesia (GMT+7)
+                </div>
+              </div>
+            </div>
+
+            <span class="badge-glass">On-site / Remote</span>
+          </div>
+
+
+          <!-- Current Status -->
+          <div class="contact-info-card glow-card reveal-left delay-4">
+            <div class="contact-info-left">
+              <div class="contact-info-icon" style="color: var(--theme-emerald); background: rgba(16, 185, 129, 0.15);">
+                <i class="ph-bold ph-check-circle"></i>
+              </div>
+
+              <div>
+                <div class="contact-info-label">Current Status</div>
+                <div class="contact-info-val" style="color: var(--theme-emerald);">
+                  Open for Game Dev, UI/UX & QA Roles
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid reveal-up delay-1">
+        <div class="nav-brand">
+          <img src="image/Logo FMI.jpg" alt="FMI Logo" class="nav-logo-icon nav-logo-img">
+          <span>Fauzan<span class="gradient-text">.dev</span></span>
+        </div>
+
+        <ul style="display: flex; gap: 24px; font-size: 0.9rem; color: var(--text-secondary); flex-wrap: wrap;">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div style="display: flex; gap: 14px;">
+          <a href="https://rb.gy/6n99h8" target="_blank" rel="noreferrer" class="back-to-top-btn" title="LinkedIn"><i
+              class="ph-bold ph-linkedin-logo"></i></a>
+          <a href="https://github.com" target="_blank" rel="noreferrer" class="back-to-top-btn" title="GitHub"><i
+              class="ph-bold ph-github-logo"></i></a>
+          <a href="https://rb.gy/lxug22" target="_blank" rel="noreferrer" class="back-to-top-btn" title="Website"><i
+              class="ph-bold ph-globe"></i></a>
+          <a href="#home" class="back-to-top-btn" title="Scroll to top"><i class="ph-bold ph-arrow-up"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom reveal-up delay-2">
+        <div>© 2026 Fauzan Muhammad Iftitah. All rights reserved.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+          PORTFOLIO // <span style="color: var(--theme-emerald);">GAME DEV & UI/UX</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       PROJECT CASE STUDY MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
+      <!-- Carousel Container with Swipe Support -->
+      <div class="modal-carousel-wrap" id="modal-carousel-wrap">
+        <div class="modal-carousel-track" id="modal-carousel-track">
+          <!-- Slides dynamically injected -->
+        </div>
+
+        <!-- Carousel Navigation Controls -->
+        <button class="carousel-nav-btn prev-btn" id="modal-carousel-prev" aria-label="Previous slide">
+          <i class="ph-bold ph-caret-left"></i>
+        </button>
+        <button class="carousel-nav-btn next-btn" id="modal-carousel-next" aria-label="Next slide">
+          <i class="ph-bold ph-caret-right"></i>
+        </button>
+
+        <!-- Carousel Pagination Dots -->
+        <div class="carousel-dots" id="modal-carousel-dots">
+          <!-- Dots dynamically injected -->
+        </div>
+
+        <!-- Carousel Counter Badge -->
+        <div class="carousel-counter-badge" id="modal-carousel-counter">1 / 1</div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span class="badge-glass" id="modal-category">Category</span>
+          <span id="modal-tagline" style="color: var(--theme-secondary);">Tagline</span>
+        </div>
+
+        <h2 class="modal-title" id="modal-title">Project Title</h2>
+        <p class="modal-text" id="modal-desc">Project description...</p>
+
+        <h4 class="modal-section-title">Core Development & Objective</h4>
+        <p class="modal-text" id="modal-challenge">Challenge details...</p>
+
+        <h4 class="modal-section-title">Architecture, Mechanics & Features</h4>
+        <p class="modal-text" id="modal-solution">Solution details...</p>
+
+        <h4 class="modal-section-title">Key Highlights & Competencies</h4>
+        <div id="modal-metrics"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 10px;">
+          <!-- Injected dynamically -->
+        </div>
+
+        <h4 class="modal-section-title">Technology & Tools</h4>
+        <div class="modal-tags" id="modal-tags">
+          <!-- Injected dynamically -->
+        </div>
+
+        <div style="margin-top: 30px; display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#" id="modal-project-link" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Visit Project</span>
+            <i class="ph-bold ph-arrow-square-out btn-icon"></i>
+          </a>
+          <button type="button" class="btn btn-outline"
+            onclick="document.getElementById('project-modal').classList.remove('active')">
+            <span>Close Window</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
