@@ -18,7 +18,7 @@ const PROJECTS_DATA = {
     challenge: 'Designing responsive arcade vehicle physics with drifting mechanics while programming waypoint-following AI opponents that react to dynamic track collisions and player positions.',
     solution: 'Implemented custom wheel colliders and raycast suspension physics in C#, coupled with spline-based AI waypoint pathfinding and smooth camera tracking.',
     tech: ['Unity Engine', 'C#', '3D Physics', 'AI Waypoint System', 'Arcade Controls', 'UI/UX Design'],
-    metrics: ['Interactive AI Opponents', 'Game Controller Support', 'Custom Vehicle Handling'],
+    metrics: ['Interactive AI Opponents', 'Game Controller Support', 'Various Racing Tracks'],
     demoUrl: 'https://drive.google.com/file/d/1Y05fjq0zMrm_JtkKwuaQJamaEantCIdT/view?usp=sharing',
     githubUrl: 'https://github.com'
   },
@@ -36,7 +36,7 @@ const PROJECTS_DATA = {
     challenge: 'Architecting a robust state-machine combat system with combo attacks, responsive hitboxes, enemy AI behaviors (patrol, chase, attack), and an expandable inventory/shop economy — all within the tight timeline of the MSIB program.',
     solution: 'Built modular C# combat controllers, finite state machines (FSM) for enemy AI, and ScriptableObject-based data architectures for inventory items, equipment stats, and shop transactions. The project was refined through iterative playtesting and mentor feedback during the Infinite Learning program.',
     tech: ['Unity Engine', 'C#', '2.5D Combat Engine', 'Enemy AI (FSM)', 'Inventory & Shop Economy', 'Level Design'],
-    metrics: ['🏆 Best Game — Infinite Learning MSIB', 'Dynamic Combo System', 'Multiple Enemy AI Types', 'Modular Inventory/Shop'],
+    metrics: ['🏆 Best Game — Infinite Learning MSIB', 'Dynamic Combo System', 'Multiple Enemy AI Types', 'Modular Inventory'],
     demoUrl: 'https://fivepoint-interactive.itch.io/thalos-the-dark-descent',
     githubUrl: 'https://github.com'
   },
@@ -70,7 +70,7 @@ const PROJECTS_DATA = {
     challenge: 'Creating intuitive UI/UX and game flow suitable for young students that reinforces learning concepts without overwhelming player attention.',
     solution: 'Designed colorful visual assets, positive reinforcement audio cues, adaptive difficulty curves, and interactive math challenge stages in Construct 2.',
     tech: ['Construct 2', 'HTML5 Game Engine', 'Gamified Learning', 'Educational UI/UX', '2D Asset Design'],
-    metrics: ['Elementary Curriculum Aligned', '100% Browser Compatible', 'High Engagement Rate'],
+    metrics: ['Elementary Curriculum Aligned', '100% Browser Compatible', 'Exciting Learning'],
     demoUrl: 'https://mathster.netlify.app',
     githubUrl: 'https://github.com'
   },
