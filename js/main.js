@@ -96,9 +96,9 @@ const PROJECTS_DATA = {
     category: 'DesktopApp (Java)',
     tagline: 'Desktop-based POS software tailored to the operational needs of a café.',
     images: [
-      'image/cafe1.png',
-      'image/cafe2.png',
-      'image/cafe3.png'
+      'image/Cafe1.png',
+      'image/Cafe2.png',
+      'image/Cafe3.png'
     ],
     description: 'A complete desktop Point-of-Sale application engineered to manage café orders, calculate bill amounts with taxes/discounts, generate receipts, and organize menu catalogs.',
     challenge: 'Structuring maintainable desktop software with reliable database connectivity, error handling for concurrent transactions, and an ergonomic cashier interface.',
