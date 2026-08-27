@@ -5,7 +5,7 @@ An interactive, modern, and responsive personal portfolio website showcasing gam
 ---
 
 ## 🚀 Live Demo & Repository
-- **Repository URL**: [https://github.com/FauzanMuhammadI/Web-Profile-Fauzan](https://fauzanm.vercel.app)
+- **Repository URL**: [https://fauzanm.vercel.app](https://fauzanm.vercel.app)
 
 ---
 
